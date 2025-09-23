@@ -327,6 +327,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: megu
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: da705367f94e149f6a25fd156a27b518,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -373,12 +378,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 96748181a5c09b90c86e183a59e3d645,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.086
+      value: -1.372
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 96748181a5c09b90c86e183a59e3d645,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.339
+      value: 0.602
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 96748181a5c09b90c86e183a59e3d645,
         type: 3}
@@ -445,16 +450,57 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 52caf0580d71dbd679c06a5463e3426b, type: 2}
+    - target: {fileID: -1461304994638716399, guid: 96748181a5c09b90c86e183a59e3d645,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 52caf0580d71dbd679c06a5463e3426b, type: 2}
+    - target: {fileID: -804731622281664130, guid: 96748181a5c09b90c86e183a59e3d645,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 52caf0580d71dbd679c06a5463e3426b, type: 2}
     - target: {fileID: 919132149155446097, guid: 96748181a5c09b90c86e183a59e3d645,
         type: 3}
       propertyPath: m_Name
-      value: Hollow Knight2
+      value: Hollow Knight
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 96748181a5c09b90c86e183a59e3d645,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7430069731396971155}
   m_SourcePrefab: {fileID: 100100000, guid: 96748181a5c09b90c86e183a59e3d645, type: 3}
+--- !u!1 &1714658118271127543 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 96748181a5c09b90c86e183a59e3d645,
+    type: 3}
+  m_PrefabInstance: {fileID: 1948609107435418278}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7430069731396971155
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714658118271127543}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aecf64b4c086a85408582032818a20dd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &2053747901388690765 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 96748181a5c09b90c86e183a59e3d645,
