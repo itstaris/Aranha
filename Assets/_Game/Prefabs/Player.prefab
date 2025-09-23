@@ -234,6 +234,7 @@ MonoBehaviour:
   moveForce: 10
   maxSpeed: 5
   stopFriction: 0.9
+  rotationSpeed: 10
 --- !u!1001 &171485067002489431
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -275,7 +276,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: da705367f94e149f6a25fd156a27b518,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.317
+      value: 0.582
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: da705367f94e149f6a25fd156a27b518,
         type: 3}
