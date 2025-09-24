@@ -359,12 +359,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 96748181a5c09b90c86e183a59e3d645,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.97
+      value: 2.62
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 96748181a5c09b90c86e183a59e3d645,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.97
+      value: 1.79
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 96748181a5c09b90c86e183a59e3d645,
         type: 3}
@@ -379,12 +379,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 96748181a5c09b90c86e183a59e3d645,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.372
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 96748181a5c09b90c86e183a59e3d645,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.602
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 96748181a5c09b90c86e183a59e3d645,
         type: 3}
@@ -424,7 +424,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 96748181a5c09b90c86e183a59e3d645,
         type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7918335002988649766, guid: 96748181a5c09b90c86e183a59e3d645,
         type: 3}
@@ -491,7 +491,7 @@ Animator:
   m_GameObject: {fileID: 1714658118271127543}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: aecf64b4c086a85408582032818a20dd, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4952a33b0d60646f09f45b57bf2ce2e1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
