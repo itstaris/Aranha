@@ -4,23 +4,14 @@ using TMPro;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
-
 {
-
-    // variaveis de dificuldade
-
+    // variáveis de dificuldade
     public float spiderSpeed;
-
-
     public int aranhasCount;
-
-
     public int score;
     public int highScore;
-
     public int gameLevel;
     public int HP = 3;
-
 
     public bool iniciado = false;
     public GameObject playerGame;
@@ -32,12 +23,10 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI highScoreGame;
 
     public GameObject spiderSpamGame;
-
-
     public GameObject gameoverText;
 
     public TextMeshProUGUI levelTxt;
-   public int level;
+    public int level;
 
     public bool nextLevelCheck;
 
@@ -51,92 +40,72 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(3f);
 
         nextLevelCheck = false;
-        //deleta aranhas
-        //spawna aranhas
+        // deleta aranhas
+        // spawna aranhas
         StartCoroutine(spiderSpamGame.GetComponent<SpiderSpawn>().SpawnPrefabsCoroutine());
     }
 
- 
     private void Start()
     {
         level = 1;
         spiderSpeed = 8f;
-        //levelTxt.text = level.ToString();
         highScoreUpdate();
+
+        // Jogo começa pausado
+        Time.timeScale = 0;
+        iniciado = false;
+
+        textoCanvas.SetActive(true); // mostra "aperte Enter"
+        playerGame.GetComponent<Player>().enabled = false;
+        playerGame.GetComponent<BoxCollider>().enabled = false;
     }
 
-
-         void highScoreUpdate()
-
+    void highScoreUpdate()
     {
-       // Debug.Log("inicia");
         highScore = PlayerPrefs.GetInt("HighScore");
-       // Debug.Log(PlayerPrefs.GetInt("HighScore"));
 
         if (score > highScore)
-
         {
-
             PlayerPrefs.SetInt("HighScore", score);
-   
-           // Debug.Log(PlayerPrefs.GetInt("HighScore"));
         }
-        highScoreGame.text = PlayerPrefs.GetInt("HighScore").ToString();
-        //Debug.Log("Termina");
-    }
 
+        highScoreGame.text = PlayerPrefs.GetInt("HighScore").ToString();
+    }
 
     public IEnumerator gameOver()
     {
-        //Tela de gameOver
-
+        // Tela de gameOver
         gameoverText.SetActive(true);
         highScoreUpdate();
-       Time.timeScale = 0;
-
-        //Salva high score
-
+        Time.timeScale = 0;
 
         yield return new WaitForSecondsRealtime(1f);
+
         // resetar o jogo
         Time.timeScale = 1;
-
-        Debug.Log(Time.timeScale);
-        //iniciaJogo();
-     resetaJogo();
-       // SceneManager.LoadScene(0);
+        resetaJogo();
     }
 
     void resetaJogo()
     {
-
         Debug.Log("Resetou");
         SceneManager.LoadScene(0);
-       // Posição Player
-       //Pode iniciar = true
-       //Tela de pode jogar
-       //Vida = 3
-       //Reseta aranhas
-       //Reseta velocida das aranhas
-
     }
-
 
     public void atualizaScore()
     {
-
         scoregame.text = score.ToString();
     }
 
-
     private void iniciaJogo()
     {
-
         StartCoroutine(spiderSpamGame.GetComponent<SpiderSpawn>().SpawnPrefabsCoroutine());
         iniciado = true;
         playerGame.GetComponent<Player>().enabled = true;
         playerGame.GetComponent<BoxCollider>().enabled = true;
         textoCanvas.SetActive(false);
+
+        Time.timeScale = 1; // libera o jogo
     }
 
     private IEnumerator PausarCoroutine()
@@ -145,47 +114,36 @@ public class GameManager : MonoBehaviour
         pausado = true;
         Time.timeScale = 0;
 
-      //  Debug.Log("Jogo pausado");
+        yield return new WaitForSecondsRealtime(0.2f);
 
-        yield return new WaitForSecondsRealtime(0.5f); // <- CORRIGIDO AQUI
-
-        // Espera até que o botão "Pausar" seja pressionado novamente
-        while (pausado==true)
+        // espera até que aperte Enter novamente
+        while (pausado)
         {
-            if (Input.GetButtonDown("Enter")){
-
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
                 Time.timeScale = 1;
                 pausado = false;
                 textoPause.SetActive(false);
-               // Debug.Log("Jogo despausado");
-
                 break;
             }
-            yield return null; // espera o próximo frame
+            yield return null; // espera próximo frame
         }
-
-        
-
-        
     }
 
     void Update()
     {
-       // Debug.Log(aranhasCount);
-        if(nextLevelCheck==false&& aranhasCount == 10)
+        if (nextLevelCheck == false && aranhasCount == 10)
         {
-
             StartCoroutine(nextLevel());
         }
 
-
-        if (Input.GetButtonDown("Enter") && !iniciado)
+        // Pressiona Enter para começar
+        if (Input.GetKeyDown(KeyCode.Return) && !iniciado)
         {
             iniciaJogo();
         }
-
-        // Inicia a corrotina de pausa se ainda não estiver pausado
-       else if (Input.GetButtonDown("Enter") && !pausado&& HP>0)
+        // Pausa / Despausa durante o jogo
+        else if (Input.GetKeyDown(KeyCode.Return) && iniciado && !pausado && HP > 0)
         {
             StartCoroutine(PausarCoroutine());
         }
