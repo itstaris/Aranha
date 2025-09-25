@@ -11,7 +11,7 @@ public class Vasinho : MonoBehaviour
     {
         if (other.CompareTag("Ground"))
         {
-Instantiate(vaseFXprefab, gameObject.transform.position, Quaternion.identity);
+            Instantiate(vaseFXprefab, gameObject.transform.position, Quaternion.identity);
             Destroy(gameObject);
 
         }
